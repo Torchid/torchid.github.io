@@ -396,7 +396,8 @@
 				sorter : new sap.ui.model.Sorter("dt"),
 				template : new sap.m.StandardListItem({
 					title: "{dt}",
-					description: "{weather}.{description}",
+					description: "{weather/0/description}",
+                    info: "{temp/max}", 
 					type: sap.m.ListType.Navigation,
 					press:function(evt){
 						var oBindingContext = evt.getSource().getBindingContext(); // evt.getSource() is the ListItem
@@ -424,9 +425,9 @@
 						title: "Details for {dt} {pressure}",
 						content: [
 							new sap.m.Text({text: "{dt}"}),
-							new sap.m.Text({text: "{dt}"}),
-							new sap.m.Text({text: "{dt}"}),
-							new sap.m.Text({text: "{dt}"}),
+							new sap.m.Text({text: "{temp/max}"}),
+							new sap.m.Text({text: "{temp/min}"}),
+							new sap.m.Text({text: "{weather/0/description}"}),
 							new sap.m.Text({text: "{humidity}"}),
 							new sap.m.Text({text: "{speed}"}),
 							new sap.m.Text({text: "{pressure}"})
