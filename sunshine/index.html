@@ -396,7 +396,7 @@
 				sorter : new sap.ui.model.Sorter("dt"),
 				template : new sap.m.StandardListItem({
 					title: "{dt}",
-					description: "{dt}",
+					description: "{weather}.{description}",
 					type: sap.m.ListType.Navigation,
 					press:function(evt){
 						var oBindingContext = evt.getSource().getBindingContext(); // evt.getSource() is the ListItem
@@ -423,9 +423,12 @@
 					new sap.ui.layout.form.SimpleForm({ 
 						title: "Details for {dt} {pressure}",
 						content: [
-							new sap.m.Label({text: "Date "}),
 							new sap.m.Text({text: "{dt}"}),
-							new sap.m.Label({text: "Pressure "}),
+							new sap.m.Text({text: "{dt}"}),
+							new sap.m.Text({text: "{dt}"}),
+							new sap.m.Text({text: "{dt}"}),
+							new sap.m.Text({text: "{humidity}"}),
+							new sap.m.Text({text: "{speed}"}),
 							new sap.m.Text({text: "{pressure}"})
 						]
 					})
