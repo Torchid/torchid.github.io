@@ -415,24 +415,29 @@
 			
 			// create the detail page
 			var page2 = new sap.m.Page("page2", {
-				title: "Weather Details",
+				title: "Details",
 				showNavButton: true,
 				navButtonPress: function(){
 					app.back();
 				},
 				content : [
-					new sap.ui.layout.form.SimpleForm({ 
-						title: "Details for {dt} {pressure}",
-						content: [
-							new sap.m.Text({text: "{dt}"}),
-							new sap.m.Text({text: "{temp/max}"}),
-							new sap.m.Text({text: "{temp/min}"}),
-							new sap.m.Text({text: "{weather/0/description}"}),
-							new sap.m.Text({text: "{humidity}"}),
-							new sap.m.Text({text: "{speed}"}),
-							new sap.m.Text({text: "{pressure}"})
+                    new sap.ui.layout.HorizontalLayout({
+                        content: [
+                            new sap.ui.layout.VerticalLayout({
+                                content: [
+                                    new sap.m.Text({text: "{dt}"}),
+                                    new sap.m.Text({text: "{temp/max}"}),
+                                    new sap.m.Text({text: "{temp/min}"}),
+                                    new sap.m.Text({text: "{humidity}"}),
+                                    new sap.m.Text({text: "{speed}"}),
+                                    new sap.m.Text({text: "{pressure}"})
+                            ]}),
+                            new sap.ui.layout.VerticalLayout({
+                                content: [
+                                    new sap.m.Text({text: "{weather/0/description}"})
+                            ]})
 						]
-					})
+                    })
 				]
 			});
 			
