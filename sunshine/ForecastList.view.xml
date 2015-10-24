@@ -1,0 +1,12 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<List
+		headerText="Products"
+		growing="true">
+		<StandardListItem
+			title="Monday"
+			description="Clear"
+			info="15" />
+	</List>
+</mvc:View>
